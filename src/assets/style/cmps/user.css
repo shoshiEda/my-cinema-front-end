@@ -1,0 +1,45 @@
+.user-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-preview{
+    position: relative;
+    border:2px solid var(--ClrBorder);
+    margin: 0.5rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    width: 20rem;
+}
+
+.user-preview p{
+    margin-inline-start: 20%;
+
+}
+
+.user-preview ul{
+    margin-block-end: 3.5rem;
+
+}
+
+.permission-list{
+    font-size: 1rem;
+    margin-inline-start: 25%;
+}
+
+.btns{
+    position: absolute;
+    bottom:-1rem;
+}
+
+.edit-user{
+    margin-inline-start: 30%;
+}
+
+.edit-user h1{
+    font-size: 2rem;
+}
+
+.edit-user button{
+    margin-block-start: 2rem;
+}

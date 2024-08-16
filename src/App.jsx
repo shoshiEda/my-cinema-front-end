@@ -7,6 +7,8 @@ import LoginPage from './cmps/LoginPage'
 import MainImg from './cmps/MainImg'
 import ViewUsers from './cmps/ViewUsers'
 import EditUser from './cmps/EditUser'
+import ViewMovies from './cmps/ViewMovies'
+import EditMovie from './cmps/EditMovie'
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
       <Route path="/" element={<MainImg/>}/>
       <Route path="/users" element={<ViewUsers/>}/>
       <Route path="/user/:id" element={<EditUser/>}/>
+      <Route path="/movies" element={<ViewMovies/>}/>
+      <Route path="/movie/:movieId" element={<EditMovie/>}/>
       <Route path="*" element={<Navigate to="/" />} />
     </Route>
    

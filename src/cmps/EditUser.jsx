@@ -53,16 +53,16 @@ if(!user) return <div>Loading...</div>
 return(
     <section className='edit-user'>
     <h1>Edit user</h1>
-    <label>user name:</label>
+    <label>user name:</label><br/>
     <input type="text" value={user.userName} onChange={(ev)=>setUser({...user,userName:ev.target.value})}/>
     <br/>
-    <label>first name:</label>
+    <label>first name:</label><br/>
     <input type="text" value={user.firstName} onChange={(ev)=>setUser({...user,firstName:ev.target.value})}/>
     <br/>
-    <label>last name:</label>
+    <label>last name:</label><br/>
     <input type="text" value={user.lastName} onChange={(ev)=>setUser({...user,lastName:ev.target.value})}/>
     <br/>
-    <label>session time out:</label>
+    <label>session time out:</label><br/>
     <input type="number" value={user.sessionTimeOut} onChange={(ev)=>setUser({...user,sessionTimeOut:ev.target.value})}/>
     <br/>
     <p>permissions:</p>

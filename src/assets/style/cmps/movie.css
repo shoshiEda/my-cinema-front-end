@@ -1,0 +1,115 @@
+.movie-container button{
+    background-color: var(--ClrLinkHover);
+}
+
+.movie-container button:hover{
+    background-color: var(--ClrMovieBtnHover);
+}
+
+.movie-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-preview{
+    position: relative;
+    border:2px solid var(--ClrLinkHover);
+    margin: 0.5rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    width: 23rem;
+}
+
+.movie-preview p{
+    margin-inline-start: 20%;
+
+}
+
+.movie-preview img{
+    margin-inline-start: 50%;
+    transform: translate(-50%);
+}
+
+.movie-preview ul{
+    margin-block-end: 3.5rem;
+
+}
+
+.movie-preview .subscriptions-modal{
+    margin-inline: 10%;
+    font-size: 0.8rem;
+    max-height: 15rem;
+    overflow-y: scroll;
+    padding: 1rem;
+    background-color: var(--ClrMovieBg);
+}
+
+.movie-preview .subscriptions-modal li{
+    cursor: pointer;
+}
+
+.movie-preview .subscriptions-modal li:hover{
+    color:var(--ClrLinkHover);
+    text-decoration: underline;
+}
+
+.movie-preview .subscriptions-btn{
+    
+    margin-inline-start: 50%;
+    transform: translate(-50%);
+}
+
+.ganre-list{
+    font-size: 1rem;
+    margin-inline-start: 25%;
+}
+
+.movie-preview .subscription-section{
+    margin-block-end: 4rem;
+}
+
+.movie-preview .btns{
+   position: absolute;
+   bottom: -1rem;
+   margin-block-end: 2rem;
+}
+
+.edit-movie{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.edit-movie h1{
+    font-size: 2rem;
+}
+
+.edit-movie .ganre-btn{
+    margin: 0.3rem;
+    font-size: 0.7rem;
+    padding: 0.3rem;
+}
+
+
+
+.edit-movie input:last-of-type{
+    margin-inline-start: 2.7rem;
+}
+
+.edit-movie button{
+    margin-block-start: 2rem;
+}
+
+.movie-header{
+    text-align: center;
+    font-size: 3rem;
+    margin-block: 0.8rem;
+}
+
+.pagination{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search{
+    text-align: center;
+}

@@ -27,13 +27,13 @@
     margin-inline-start: 25%;
 }
 
-.btns{
+.user-preview .btns{
     position: absolute;
     bottom:-1rem;
 }
 
 .edit-user{
-    margin-inline-start: 30%;
+    text-align: center;
 }
 
 .edit-user h1{
@@ -42,4 +42,19 @@
 
 .edit-user button{
     margin-block-start: 2rem;
+}
+
+.user-header{
+    text-align: center;
+    font-size: 3rem;
+    margin-block: 0.8rem;
+}
+
+.pagination{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search{
+    text-align: center;
 }

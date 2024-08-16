@@ -12,13 +12,12 @@ export const login = async(username,password)=>{
     try{
 
         
-        const response = await axios.post(url + '/login', { username, password }, {
-            withCredentials: true, 
-          });
+        const response = await axios.post(url + '/login', { username, password })
         if(response.data.success){
             const token = response.data.token
             const decodedToken = jwt.jwtDecode(token)
             localStorage.setItem('loggedInUser', JSON.stringify(decodedToken));
+            localStorage.setItem('token',token)
             store.dispatch({type:SET_LOGGED_IN_USER,payload:decodedToken})
             return {loggedInUser:decodedToken}
         }else{
@@ -31,14 +30,13 @@ export const login = async(username,password)=>{
 
 export const signup = async(user)=>{
     try{
-        const response = await axios.post(url + '/signup', { user }, {
-            withCredentials: true, 
-          });
+        const response = await axios.post(url + '/signup', { user })
           
           if(response.data.success){
           const token = response.data.token
           const decodedToken = jwt.jwtDecode(token)
           localStorage.setItem('loggedInUser', JSON.stringify(decodedToken));
+          localStorage.setItem('token',token)
           store.dispatch({type:SET_LOGGED_IN_USER,payload:decodedToken}) 
           store.dispatch({type:ADD_NEW_USER,payload:decodedToken})  
           return {loggedInUser:decodedToken}

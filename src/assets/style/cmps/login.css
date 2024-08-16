@@ -1,0 +1,48 @@
+
+.login-bg{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../img/cinema.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.login-page{
+    position: absolute;
+    text-align: center;
+    border: 3px solid var(--ClrBorder);
+    border-radius: 2rem;
+    width: 30rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:var(--bgClr);
+}
+
+.login-page input{
+    margin-block-end: 0.5rem;
+}
+
+.login-page h1{
+    font-size: 2.5rem;
+}
+
+.login-signup-btn{
+    border: none;
+    background-color: transparent;
+    margin-block-end: 0.5rem;
+    color:var(--ClrLink);
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.login-signup-btn:hover{
+    color:var(--ClrLinkHover);
+    background-color: transparent;
+}
+
+.login-error{
+    color:var(--ClrErr);
+    font-size: 0.8rem;
+}

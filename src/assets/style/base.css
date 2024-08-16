@@ -1,0 +1,40 @@
+
+
+button{
+    background-color: var(--BtnClr);
+    border: none;
+    border-radius:1.3rem;
+    padding: 0.5rem;
+    padding-inline: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-block-end: 1rem;
+    color:var(--bgClr);
+    font-size: 0.9rem;
+    margin: 0.5rem;
+}
+
+button:hover{
+    background-color: var(--BtnClrHover);
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+input{
+    margin-block: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+label{
+    font-size: 1.2rem;
+    
+}

@@ -1,0 +1,43 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--BtnClr);
+    border-radius: 0.5rem;
+    color:var(--bgClr)
+}
+
+.header a{
+    margin-inline-start: 1.5rem;
+    font-size: 1.5rem;
+    
+}
+
+.header a:hover{
+    color:var(--ClrLogo);
+}
+
+.header .logo a{
+    color:var(--ClrLogo);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-inline-start: 0.5rem;
+}
+
+.header div{
+    display: flex;
+    align-items: baseline;
+}
+
+.header button{
+    font-weight: 100;
+    text-decoration: underline;
+}
+
+.header button:hover{
+    background-color: inherit;
+    color:var(--ClrLink);
+}
+
+.header nav .active{
+    color:var(--ClrLogo);
+}

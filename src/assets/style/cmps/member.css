@@ -1,0 +1,115 @@
+.member-container button{
+    background-color: var(--ClrLinkHover);
+}
+
+.member-container button:hover{
+    background-color: var(--ClrMovieBtnHover);
+}
+
+.member-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.member-preview{
+    position: relative;
+    border:2px solid var(--ClrLinkHover);
+    margin: 0.5rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    width: 27rem;
+}
+
+.member-preview p{
+    margin-inline-start: 10%;
+
+}
+
+.member-preview ul{
+    margin-block-end: 3.5rem;
+
+}
+
+.member-preview .subscriptions-modal{
+    margin-inline: 10%;
+    font-size: 0.8rem;
+    max-height: 15rem;
+    overflow-y: scroll;
+    padding: 1rem;
+    background-color: var(--ClrMovieBg);
+}
+
+.member-preview .subscriptions-modal li{
+    cursor: pointer;
+}
+
+.member-preview .subscriptions-modal li:hover{
+    color:var(--ClrLinkHover);
+    text-decoration: underline;
+}
+
+.member-preview .subscriptions-btn{
+    
+    margin-inline-start: 50%;
+    transform: translate(-50%);
+}
+
+.new-subscription{
+    margin-inline-start: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    bottom:4rem;
+}
+
+.member-preview .subscription-section{
+    margin-block-end: 8rem;
+}
+
+.movie-info {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    transform: translateY(180px);
+    width: 200px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding-inline: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+   border-radius: 1rem;
+   
+  }
+  
+
+.member-preview .btns{
+   position: absolute;
+   bottom: -1rem;
+   margin-block-end: 1.5rem;
+   margin-inline-start: 27%;
+}
+
+.edit-member{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.edit-member h1{
+    font-size: 2rem;
+}
+
+
+
+.edit-member input:last-of-type{
+    margin-inline-start: 2.7rem;
+}
+
+.edit-member button{
+    margin-block-start: 2rem;
+}
+
+.member-header{
+    text-align: center;
+    font-size: 3rem;
+    margin-block: 0.8rem;
+}
+

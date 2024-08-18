@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getUser,UpdateUser } from "../services/user.service"
+import { UpdateUser } from "../services/user.service"
+import { GET_USER } from '../redux/user.reducer'
+import { useDispatch,useSelector } from 'react-redux'
 
 export default function EditUser() {
 
@@ -16,20 +18,22 @@ export default function EditUser() {
     })
     const permissionList=["View Subscriptions","Create Subscriptions","Delete Subscriptions","Update Subscription","View Movies","Create Movies","Delete Movies","Update Movie"]
 
-    useEffect(() => {
-        const fetchUser = async () => {
-            if (id) {
-                try {
-                    const tempUser = await getUser(id)
-                    setUser(tempUser)
-                } catch (err) {
-                    console.error('Error fetching user:', err)
-                }
-            }
-        }
+    const chosenUser = useSelector(state=>  state.userModule.chosenUser)
+    const dispatch = useDispatch()
 
-        fetchUser()
+    console.log(chosenUser,id)
+
+    useEffect(() => {
+            dispatch({ type: GET_USER, payload: id })
     }, [id])
+    
+    useEffect(() => {
+        if (chosenUser) {
+            console.log(chosenUser)
+            setUser(chosenUser)
+        }
+    }, [chosenUser])
+    
 
     const handleCheckboxChange = (ev,permission) => {
         let userNewPermisions

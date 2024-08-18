@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import  store  from "../main.jsx"
-import { SET_MOVIES, REMOVE_MOVIE ,EDIT_MOVIE ,ADD_MOVIE } from "../redux/movie.reducer"
+import { SET_MOVIES, GET_ALL_MOVIES, REMOVE_MOVIE ,EDIT_MOVIE ,ADD_MOVIE } from "../redux/movie.reducer"
 
 const url = 'http://127.0.0.1:8001/cinema/movies'
 
@@ -31,6 +31,22 @@ export const loadMovies = async (filter={searchBy:"",pageIdx:0,limitPerPage:20,s
         console.log('Error during loading movies:', err);
     }
 }
+
+export const getAllMovies = async()=>{
+try{
+    const token = localStorage.getItem('token') 
+
+    const { data } = await axios.get(`${url}/all`, {
+        headers: {
+            Authorization: `Bearer ${token}`  }})
+
+    if(data)
+    store.dispatch({ type: GET_ALL_MOVIES, payload: data })
+    
+} catch (err) {
+    console.log('Error during loading movies:', err);
+}
+}
 export const deleteMovie = async(movieId)=>{
     try{    
         const token = localStorage.getItem('token') 
@@ -58,7 +74,7 @@ export const getMovie = async(movieId)=>{
         return data
       
    }catch(err){
-       console.log('Error during getting a movie:', err);
+       console.log('Error during getting a movie:', err)
        }
 }
 

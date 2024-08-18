@@ -13,6 +13,8 @@ export default function ViewMovies(){
     const navigate = useNavigate()
 
     const movies = useSelector((state) => state.movieModule.movies)
+    const loggedInUser = useSelector((state) => state.systemModule.loggedInUser);
+
     const [searchBy,setSearchBy] = useState("")
     const [searchByGenre,setSearchByGenre] = useState("")
     const [pageIdx,setPageIdx] = useState(0)
@@ -39,7 +41,7 @@ export default function ViewMovies(){
                 <button disabled={pageIdx === 0} onClick={()=>setPageIdx(pageIdx-1)}>← prev page</button>
                 <button disabled={isLastPage} onClick={()=>setPageIdx(pageIdx+1)}>next page →</button>
             </div>
-            <button onClick={()=>navigate(`/movie/add`)}>Add new movie</button>
+            {loggedInUser.permissions.includes("Create Movies") && <button onClick={()=>navigate(`/movie/add`)}>Add new movie</button>}
             <div className="search">
             <label>search by name:</label>
             <input type="text" onChange={(ev)=>setSearchBy(ev.target.value)}/>
@@ -48,7 +50,7 @@ export default function ViewMovies(){
             <br/>
             <div className="search">
             <label htmlFor="genres">search by genres:</label>
-            <input list="options" id="myInput" name="myInput" onChange={(ev)=>setSearchByGenre(ev.target.value)} />
+            <input list="options" id="myInput" name="myInput" placeholder="Type or choose" onChange={(ev)=>setSearchByGenre(ev.target.value)} />
            
             <datalist id="options">
                 <option value="Comedy" />

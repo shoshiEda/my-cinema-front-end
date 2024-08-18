@@ -50,11 +50,3 @@
     margin-block: 0.8rem;
 }
 
-.pagination{
-    display: flex;
-    justify-content: space-between;
-}
-
-.search{
-    text-align: center;
-}

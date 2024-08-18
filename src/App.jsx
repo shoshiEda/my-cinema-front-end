@@ -9,6 +9,10 @@ import ViewUsers from './cmps/ViewUsers'
 import EditUser from './cmps/EditUser'
 import ViewMovies from './cmps/ViewMovies'
 import EditMovie from './cmps/EditMovie'
+import ViewMembers from './cmps/ViewMembers'
+import EditMember from './cmps/EditMember'
+import EditMemberSubscriptions from './cmps/EditMemberSubscriptions'
+
 
 
 function App() {
@@ -29,6 +33,9 @@ function App() {
       <Route path="/user/:id" element={<EditUser/>}/>
       <Route path="/movies" element={<ViewMovies/>}/>
       <Route path="/movie/:movieId" element={<EditMovie/>}/>
+      <Route path="/members" element={<ViewMembers/>}/>
+      <Route path="/member/:memberId" element={<EditMember/>}/>
+      <Route path="/member/subscriptions/:memberId" element={<EditMemberSubscriptions/>}/>
       <Route path="*" element={<Navigate to="/" />} />
     </Route>
    

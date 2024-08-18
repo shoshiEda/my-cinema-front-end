@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getMovie, UpdateMovie ,AddMovie } from "../services/movie.service"
+import { UpdateMovie ,AddMovie } from "../services/movie.service"
+import { GET_MOVIE } from '../redux/movie.reducer'
+import { useDispatch,useSelector } from 'react-redux'
 
 export default function EditMovie() {
 
@@ -8,28 +10,31 @@ export default function EditMovie() {
     
     const { movieId:id } = useParams()
     const [newGanre,setNewGanre] = useState("")
+    const chosenMovie = useSelector(state=>  state.movieModule.chosenMovie)
     const [movie,setMovie] = useState({
         name:"",
-        premierred:Date.now(),
+        premiered:Date.now(),
+        img:"",
         genres:[]
     })
 
-    
-    useEffect(() => {
-        const fetchMovie = async () => {
-            if (id!=='add') {
-                try {
-                    const tempMovie = await getMovie(id)
-                    console.log(tempMovie)
-                    setMovie(tempMovie)
-                } catch (err) {
-                    console.error('Error fetching movie:', err)
-                }
-            }
-        }
+    const dispatch = useDispatch()
 
-        fetchMovie()
-    }, [id])
+
+    
+   
+        useEffect(() => {
+            if (id !== 'add') {
+                dispatch({ type: GET_MOVIE, payload: id });
+            }
+        }, [id])
+        
+        useEffect(() => {
+            if (chosenMovie) {
+                setMovie(chosenMovie);
+            }
+        }, [chosenMovie])
+        
 
 
     const Update = async(id,movie)=>{
@@ -76,7 +81,7 @@ return(
     <input type="text" value={movie.img} onChange={(ev)=>setMovie({...movie,img:ev.target.value})}/>
     <br/>
     <label>ganres:</label><br/>
-    {movie.genres.map(ganre=> (<li key={ganre}> {ganre} <button className='ganre-btn' onClick={()=>deleteGanre(ganre)}>X</button></li>))}
+    {movie.genres && movie.genres.map(ganre=> (<li key={ganre}> {ganre} <button className='ganre-btn' onClick={()=>deleteGanre(ganre)}>X</button></li>))}
     <input type="text" onChange={(ev)=>setNewGanre(ev.target.value)} placeholder='new ganre' value={newGanre} />
     <button className='ganre-btn' onClick={addGanre}>add</button>
     <br/><br/>

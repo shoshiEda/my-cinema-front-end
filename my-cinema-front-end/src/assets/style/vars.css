@@ -1,0 +1,10 @@
+:root {
+    --bgClr: whitesmoke;
+    --ClrLink: blue;
+    --ClrLinkHover: rgb(11, 11, 80);
+    --ClrBorder:#720707;
+   --BtnClr:rgb(194, 69, 69);
+   --BtnClrHover:rgb(243, 133, 133);
+   --ClrErr:red;
+
+}

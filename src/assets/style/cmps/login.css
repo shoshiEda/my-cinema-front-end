@@ -22,6 +22,9 @@
 
 .login-page input{
     margin-block-end: 0.5rem;
+    margin-inline-start: 0.2rem;
+    padding-block: 0.2rem;
+    padding-inline: 0;
 }
 
 .login-page h1{
@@ -66,10 +69,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color:var(--bgClr);
-}
-
-.login-page input{
-    margin-block-end: 0.5rem;
 }
 
 .login-page h1{
